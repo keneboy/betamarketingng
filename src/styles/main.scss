@@ -1,0 +1,45 @@
+@import "./base/mixins";
+@import "./base/default";
+
+
+@import "./components/footer";
+@import "./components/consultant";
+@import "./components/password";
+@import "./components/nav";
+@import "./components/header";
+@import "./components/aboutus";
+@import "./components/textanimation";
+@import "./components/contact";
+@import "./components/offering";
+@import "./components/recentproduct";
+@import "./components/featuredProperty";
+@import "./components/featuredProperties";
+@import "./components/property";
+@import "./components/backTop";
+@import "./components/listing";
+@import "./components/editproperty";
+@import "./components/hamburger";
+@import "./components/message";
+@import "./components/messages";
+@import "./components/portalBottom";
+@import "./components/personalInfomation";
+@import "./components/sideNav";
+@import "./components/ourPartner";
+@import "./components/introduction";
+@import "./components/preloader";
+
+@import "./layout/contactLayout";
+
+@import "./pages/home";
+@import "./pages/consultDashboard";
+@import "./pages/portal";
+@import "./pages/dashboard";
+@import "./pages/login";
+@import "./pages/notfound";
+@import "./pages/contact";
+@import "./pages/aboutus";
+@import "./pages/service";
+@import "./pages/setting";
+@import "./pages/consultantDownline";
+@import "./pages/majorConsult";
+@import "./pages/consultantPayment";

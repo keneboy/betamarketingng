@@ -1,0 +1,186 @@
+.featuredProperty{
+ background-color: #f1ebeb65;
+@include Flex(stretch, center);
+flex-direction: column;
+padding-top:8rem;
+@media screen and (max-width:1287px){
+    padding: 0 4rem;
+    padding-top:8rem;
+}
+width:100%;
+    & h1{
+        color: #000000;
+        font-family: "Prata", Sans-serif;
+        font-weight: 300;
+        line-height: 1.5em;
+        font-size: 2.9rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    & .categories{
+        max-width:120rem;
+        width:100%;
+        & ul{
+            @include Flex;
+            & li{
+                border-color: transparent;
+                text-transform: uppercase;
+                padding: 20px;
+                width: auto;
+                min-width: 150px;
+                text-align: center;
+                background-color: #ebebeb;
+                line-height: 14px;
+                white-space: nowrap;
+                font-size: 1.3rem;
+                cursor: pointer;
+                &.active{
+                    background:#fff;
+                }
+            }
+        }
+     
+
+    }
+    & .properties_grid{
+        max-width: 120rem;
+        width:100%;
+        margin-bottom:4rem;
+        @include Flex(space-between, center);
+        
+        & .grid{
+            @include Flex(stretch, center);
+            
+            & .grid_icon{
+                & .icon{
+                    font-size: 3rem;
+                    &.active{
+                        color:red;
+                    }
+                }
+            }
+            
+        }
+        & h2{
+            font-size: 3rem;
+            text-transform: capitalize;
+            line-height: 1.2;
+
+        }
+    }
+    & > p{
+        color: #000000;
+        font-family: "Lato", Sans-serif;
+        font-size: 1.7rem;
+        font-weight: 300;
+        letter-spacing: 0.6px;
+        margin-bottom: 6rem;
+        text-align: center;
+    }
+    & .gallery{
+        align-self: stretch;
+        @include Flex(center, stretch);
+        & ul{
+            max-width: 120rem;
+            width:100%;
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+            gap:2rem;
+            @media screen and (max-width:468px){
+                grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+            }
+            
+            & li{
+                width:100%;
+                & .image{
+                    width:100%;
+                    height:26.5rem;
+                    overflow: hidden;
+                    backface-visibility: hidden;
+                    position:relative;
+                    &::after{
+                        content:"";
+                        position:absolute;
+                        top:0;
+                        left:0;
+                        width:100%;
+                        height:100%;
+                        background: linear-gradient(to bottom, transparent,transparent,rgba(0,0,0,0.5) );
+
+                    }
+                    & img{
+                        width:100%;
+                        height:100%;
+                        object-fit: cover;
+                        transform: scale(1);
+                        transition: all 2s linear;
+                    }
+                    & .attachment{
+                        position:absolute;
+                        bottom:2rem;
+                        left:2rem;
+                        z-index:4;
+                        color:#fff;
+                    }
+                    &:hover img{
+                        transform: scale(1.5);
+                    }
+                }
+                & .description{
+                    & > .top_desc{
+                        padding-bottom:1rem;
+                        &.top_border{
+                            border-bottom:1px solid rgb(197, 189, 189);
+                        }
+                        & ul{
+                            @include Flex;
+                            & li{
+                                font-size:1.2rem;
+                            }
+                        }   
+                    }
+                    padding:3rem;
+                    border:1px solid #f2f2f2;
+& .bottom_desc{
+    @include Flex;
+    flex-direction: column;
+    padding-top:1rem;
+    & span{
+        font-size: 1.4rem;
+    }
+
+
+}
+                }
+            }
+
+            &.row{
+                grid-template-columns: repeat(1, 1fr);
+                & > li{
+                    height:20rem;
+                    border:1px solid rgba(156, 148, 148, 0.178);
+                    & .link{
+                        height:100%;
+                        & .image{
+                            width:30rem;
+                            height:100%;
+                            & img{
+                                width:100%;
+                                height:100%;
+                                object-fit:cover;
+
+                            }
+                        }
+                        @include Flex;
+                        & .description{
+                            border:1px solid transparent; 
+                            align-self: flex-end; 
+                            max-width:60rem;
+                            width:100%;        
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

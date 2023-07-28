@@ -1,0 +1,40 @@
+.message{
+    background-color: rgb(243, 242, 241);
+    padding:6rem 12rem;
+    & .content{
+        background:#fff;
+        min-height:50rem;
+        padding:4rem;
+        & h1{
+            text-align: center;
+            margin-bottom:4rem;
+        }
+        & .fullname_phone{
+            margin-bottom:4rem;
+            & .name,
+            & .phone,
+            & .email,
+            & .date
+            {
+                @include Flex;
+                margin-bottom: .5rem;
+                & p{
+                    font-size: 1.4rem;
+                    margin-right:1rem;
+                    font-weight: 600;
+                }
+                & span{
+                    color:grey;
+                    font-size: 1.4rem;
+                }
+            }
+        }
+        & .description{
+            border-top:1px solid #f2f2f2;
+            font-size: 1.4rem;
+            font-weight: 400;
+            padding-top:2rem;
+            font-style: italic;
+        }
+    }
+}

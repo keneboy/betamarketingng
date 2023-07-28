@@ -1,0 +1,295 @@
+.portal{
+    @include Flex;
+    position:relative;
+    width:100%;
+    & .portal_left{
+        // flex:0 1 20%;
+        background:rgba(255, 68, 0, 0.445);
+        height:100%;       
+        position:fixed;
+        width:25rem;
+        top:0;
+        left: 0;
+        bottom:0;
+        padding:1.5rem;
+        @include Flex;
+        flex-direction: column;
+        & .toggle_button{
+            opacity:0;
+            @media screen and (max-width:648px){
+            position:absolute;
+            right:2rem;
+            top:4rem;
+            font-size:4rem;
+            color:#fff;
+            opacity: 1;
+            }
+            
+
+        }
+        @media screen and (max-width:648px){
+            left:-25rem;
+            transition : left .5s;
+            &.active{
+                left:0;
+                width:30rem;
+                z-index:50000;
+                backdrop-filter: blur(1rem);
+            }
+        }
+        & .logo{
+            & img{
+                max-width:15rem;
+                @media screen and (max-width:730px){
+                    max-width:10rem;  
+                }
+                
+                
+            }
+        }
+        & .welcome{
+            margin-bottom:4rem;
+            & h2{
+                font-weight: 400;
+                font-size: 2.2rem;
+                color:#fff;
+
+            }
+            & span{
+                display: inline-block;
+                font-size: 1.2rem;
+                color:grey;
+            }
+        }
+        & .home_login{
+            & h2{
+                font-size: 1.4rem;
+                text-transform: uppercase;
+                color:#fff;
+                margin-bottom: 1rem;
+                margin-left:2rem;
+            }
+            & ul{
+                & li{
+                    font-size: 1.6rem;
+                    color:grey;
+                    @include Flex(stretch, center);
+                    & span{
+                        margin-left: 1rem;
+                    }
+                    &:not(:last-child){
+                        margin-bottom: 2rem;
+                    }
+                }
+            }
+        }
+    }
+    & .portal_right{
+        // flex:0 1 80%;
+        background:#f2f2f2;
+        position:absolute;
+        width:calc(100% - 25rem);
+        top:0;
+        left: 25rem;
+        @media screen and (max-width:648px){
+            width:100%;
+            left:auto;
+        }
+
+        & .top{
+            padding:1rem 1.5rem;
+            background:#fafafa;
+            border-bottom:1px solid #ccc;
+            position: sticky;
+            top:0;
+            @include Flex(space-between, center);
+            & .left{
+                & .user_arrow{
+                    @include Flex(stretch, center);
+                    & .user{
+                        width:4rem;
+                        height: 4rem;
+                        border-radius: 50%;
+                        overflow: hidden;
+                        & img{
+                            width:100%;
+                            height: 100%;
+                            // object-fit: cover;
+                           
+                        }
+                    }
+                }
+
+            }
+            & .right{
+                opacity:0;
+                @media screen and (max-width:648px){
+                    opacity:1
+                }
+                & *{
+                    font-size: 4rem;
+                }
+            }
+           
+        }
+        & .bottom{
+            background: #fff;
+            margin:2rem;
+            padding:2rem;
+            & .title{
+border-bottom: 1px solid #ccc;
+font-size: 2rem;
+font-weight: 600;
+padding-bottom:.5rem;
+            }
+            & .form{
+                & form{
+                    & p{
+                        color:rgba(255, 68, 0, 0.445);
+                        font-size: 1.3rem;
+                        font-weight: 600;
+                        margin:2rem 0;
+                    }
+                    & .form_wrapper{
+                        max-width: 62rem;
+                        width:100%;
+                        margin:0 auto;
+                        @include Flex(stretch, flex-end);
+                        flex-direction: column;
+                        @media screen and (max-width:922px){
+                            max-width: 100%;
+                            width:100%;
+                            @include Flex(stretch, stretch);
+                            flex-direction: column;
+                        }
+                        & > p.errorMessage{
+                            color:red;
+                            background:rgba(243, 80, 80, 0.548);
+                            max-width:40rem;
+                            width:100%;
+                            padding:1rem 3.5rem;
+                            text-align: center;
+                            align-self: end;
+                            font-weight:300;
+                            @include Flex(center, center);
+                            margin-bottom:2rem;
+
+                        }
+                       
+                        & > *:not(:last-child){
+                            margin-bottom: 1rem;
+                        }
+                        & .input_label,
+                        & .radio_gender{
+                            @include Flex(stretch, center);
+                            @media screen and (max-width:922px){
+                                flex-direction:column;
+                                @include Flex;
+                                width:100%;
+                            
+                            }
+                            & label{
+                                margin-right:2rem;
+                            }
+                        }
+                        & .radio_gender{
+                            & .radio_field{
+                                width:40rem;
+                                @include Flex(stretch, center); 
+                                @media screen and (max-width:922px){
+                                    width:100%;
+                                
+                                }
+                                & .main_field{
+                                    @include Flex;
+                                    & .field{
+                                        &:not(:last-child){
+                                            margin-right:1rem;
+                                        }
+                                        & span{
+                                            margin-left:.5rem;
+                                        }
+                                    }
+                                }
+                            
+                            }
+                        }
+                        & .input_error{
+                            @include Flex;
+                            flex-direction: column;
+                            width:40rem;
+                            @media screen and (max-width:922px){
+                               width:100%;
+                            }
+                            & input{
+                                height:4rem;
+                                width:100%;
+                                padding:1rem;
+                                &:focus{
+                                    border:1px solid rgba(255, 68, 0, 0.445);
+                                    outline: none;
+                                }
+                            }
+                            & textarea{
+                                width:40rem; 
+                                padding:2rem; 
+                                @media screen and (max-width:922px){
+                                    width:100%;
+                                 }
+                            }
+
+                        }
+                        
+                    }
+                    & .line{
+                        width:100%;
+                        height:.1rem;
+                       background:  #ccc;
+                       margin-top:2rem;
+                    }
+                    & .button_wrapper{
+                     
+                        padding-top:1rem;
+                        max-width: 63rem;
+                        width:100%;
+                        margin:0 auto;
+                        @include Flex(flex-end, center);
+                        & .btn_container{
+                            width:40rem;
+                            @include Flex;
+                            & button,
+                            & .cancel{
+                                padding:.5rem 1.5rem;
+                                display: inline-block;
+                                border:1px solid rgba(255, 68, 0, 0.445);
+                                background: rgba(255, 68, 0, 0.445);
+                                cursor: pointer;
+                                &:first-child{
+                                    border:none;
+                                    background: transparent;
+                                    margin-right:1rem;
+                                    color:rgba(255, 68, 0, 0.89);
+                                    font-weight: 900;
+                                }
+                                
+                            }
+                                   
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+}
+p.error_message{
+    color:red;
+    background:rgba(243, 80, 80, 0.548);
+    max-width:60rem;
+    width:100%;
+    padding:1rem 3.5rem;
+    text-align: center;
+    align-self: end;
+    font-weight:300;
+    @include Flex(center, center);
+}

@@ -1,0 +1,113 @@
+.downlines{
+    margin-top: 4rem;
+    background-color: #fff;
+    padding:2rem;
+    & .title{
+
+       font-size: 2rem;
+       margin-bottom: 2rem; 
+
+    }
+    & .input_referral{
+        @include Flex(stretch, center);
+        height:4.5rem;
+        max-width:50rem;
+        width:100%;
+        margin-bottom: 2rem;
+        overflow: hidden;
+        border:1px solid rgb(203, 245, 243);
+        & input{
+            flex:1;
+            border: none;
+            background: transparent;
+            margin-left:1rem;
+            outline: none;
+            font-size: 1.4rem;
+            color:grey;
+        }
+        & button{
+            height: 100%;
+            background:red;
+            border:none;
+            padding:1rem;
+            color:#fff;
+            cursor: pointer;
+            position:relative;
+            @include Flex(center, center);
+            & .clip_board{
+                margin-right:.5rem;
+                color:#fff;
+            }
+            &.active{
+                &::after{
+                    position:absolute;
+                    content:"COPIED";
+                    top:50%;
+                    left:0%;
+                    transform:translateY(-50%);
+                    height:80%;
+                    background:red;
+                    color:#fff;
+                    @include Flex(center, center);
+                    padding:1rem;
+                    animation-name: animateDefault;
+                    animation-duration: 1s;
+                    animation-timing-function: ease-in-out;
+                    animation-fill-mode: backwards;
+                    opacity:0;
+    
+                }
+            }
+           
+        }
+        
+    }
+    & .consultant_table{
+        & .css-1e2bxag-MuiDataGrid-root{
+            border:none;
+            & .MuiDataGrid-row {
+                margin-bottom:1rem;
+                border:none;
+                font-size: 1.4rem;
+                background:#f2f2f2;
+                &:first-child{
+                    margin-top:1rem;
+                }
+            }
+        }
+        & .css-f3jnds-MuiDataGrid-columnHeaders{
+            border:none;
+            background: rgb(203, 245, 243);
+            font-size:1.4rem;
+            font-weight: 600;
+        }
+       
+    }
+}
+.consultant_action{
+    width:3rem;
+    height:3rem;
+    @include Flex(center, center);
+    background: transparent;
+    transition: all .5s;
+    border-radius: 50%;
+    cursor: pointer;
+    &:hover{
+        background:grey;
+    };
+}
+
+@keyframes animateDefault {
+    0%{
+        transform:translate(0rem, -50%);
+        opacity:0;
+    }
+    50%{
+        transform:translate(-6rem, -50%);
+        opacity:.5
+    }
+    100%{
+        transform:translate(-10rem, -50%);
+        opacity: 1;
+    }
+}

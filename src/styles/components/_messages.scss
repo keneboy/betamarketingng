@@ -1,0 +1,65 @@
+.messages{
+    padding-top:6rem;
+    padding-bottom:4rem;
+    border-top-left-radius: 5rem;
+    border-top-right-radius: 5rem;
+    border:1px solid #f2f2f2;
+    & ul{
+        @include Flex;
+        flex-direction: column;
+        & li{
+            width:100%;
+            padding:1rem 1.5rem;
+            position:relative;
+            border:1px solid #f2f2f2;
+           
+            & .message_link{
+                @include Flex(space-between, center);
+            }
+            & .main_message{
+                max-width:50rem;
+                width:100%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;;
+            }
+            &.unseen{
+                background:rgba(221, 199, 199, 0.541);
+            }
+            & .delete_wrapper{
+                position:absolute;
+                right:1rem;
+                top:0;
+                right:0;
+                height:100%;
+                width:10rem;
+                // z-index:1;
+                opacity:0;
+                z-index:1;
+                // background:rgba(128, 128, 128, 0.164);
+                @include Flex(center, center);
+                & .icon{
+                    font-size:2rem;
+                    cursor: pointer;
+                    z-index:10;
+                    position:relative;
+                }
+            }
+            & .time{
+
+            }
+            &:hover .time{
+                opacity:0;
+            }
+            &:hover .delete_wrapper{
+                opacity:1;
+            }
+            &:hover{
+                background:rgba(128, 128, 128, 0.164);
+                width:100%;
+                cursor:pointer;
+            }
+ 
+        }
+    }
+}

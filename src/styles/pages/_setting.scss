@@ -1,0 +1,22 @@
+.editAccountPage{
+    // width:100%;
+    // border:1px solid red;
+    max-width:80rem;
+    width:100%;
+    margin:0 auto;
+    background:#fff;
+    & h1{
+        padding:1rem 1.5rem;
+        border-bottom: 1px solid #f2f2f2;
+        font-size:1.8rem;
+        font-weight: 600;
+    }
+    & form{
+        & .list_wrapper{
+            @include DFlex;
+            &:not(:last-child){
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+}

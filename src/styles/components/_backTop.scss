@@ -1,0 +1,41 @@
+button.button{
+    
+        // position:fixed,
+        // right: "2rem",
+        // bottom: "4rem",
+        // background: "red"
+        width:4.5rem;
+        height:4.5rem;
+        border-radius: 50%;
+        @include Flex(center, center);
+        background: rgba(182, 54, 54, 0.452);
+        border:none;
+        position:fixed;
+        right:2rem;
+        bottom:3rem;
+        transform:translateY(4rem);
+        transition: all .5s;
+        opacity:0;
+        cursor: pointer;
+        & .icon{
+            color:#fff;
+            font-size:2.5rem;
+        }
+        &.activate{
+            transform:translateY(0rem);
+            opacity:1;
+        }
+    
+}
+
+.whatsapp{
+    position:fixed;
+    right:5rem;
+    bottom:2rem;
+    z-index: 6;
+    & img{
+        max-width: 10rem;
+        
+    }
+    
+}

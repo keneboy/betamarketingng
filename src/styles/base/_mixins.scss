@@ -1,0 +1,11 @@
+@mixin Flex($content:stretch, $items:stretch) {
+    display: flex;
+    justify-content: $content ;
+    align-items: $items;
+}
+@mixin DFlex($content:"stretch", $items:"stretch",$dir:"row") {
+    display: flex;
+    justify-content: $content ;
+    align-items: $items;
+    flex-direction: $dir;
+}

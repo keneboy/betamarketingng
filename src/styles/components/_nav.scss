@@ -1,0 +1,75 @@
+
+.main_header_wrap{
+    @include Flex(space-between, center);
+    padding:1rem 8rem 0 8rem;    
+    @media screen and (max-width:980px){
+        padding:1rem 4rem 0 2rem;
+    }
+    @media screen and (max-width:475px){
+        padding:6rem 2rem 0 2rem;
+    }
+    & .logo{
+        @include Flex(stretch, center);
+        width:100%;
+        & img{
+            max-width:8rem;
+            margin-right:1rem;
+          
+        }
+        & p{
+            font-size: 2rem;
+            color:#fff;
+            font-size:3rem;
+            display: inline-block;
+            & span{
+                color:red;
+            }
+        }
+    }
+    & nav{
+       
+        & ul{
+            white-space: nowrap;
+            @include Flex(stretch, center);
+            @media screen and (max-width:881px){
+                flex-direction: column;
+                display:none;
+                // @include Flex(center, center);
+            }
+            
+            & li{
+                color:#fff;
+                font-size: 1.7rem;
+                position: relative;
+                display: inline-block;
+                cursor: pointer;
+                padding: .25rem;
+                font-size: 1.5rem;
+                line-height: 150%;
+                transition: color .35s;
+                transition-delay: 0s;
+                transition-timing-function: ease;
+                @media screen and (max-width:881px){
+                    color:#222;
+                }
+                &:not(:last-child){
+                    margin-right: 4rem;
+                    @media screen and (max-width:881px){
+                        margin-right: 0rem;
+                        margin-bottom: 2rem;
+                    }
+                }
+                &:hover{
+                    color:red;
+                }
+
+            }
+            &.uniq{
+                & li{
+                    color:var(--str);
+                }
+            }
+
+        }
+    }
+}

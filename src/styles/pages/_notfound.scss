@@ -1,0 +1,8 @@
+.notfound{
+    @include Flex(center, center);
+    width:100%;
+    height:calc(100vh - 6rem);
+    & p{
+        font-weight: 600;
+    }
+}

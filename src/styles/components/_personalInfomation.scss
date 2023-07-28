@@ -1,0 +1,84 @@
+.personal_information{
+    background:#fff;
+    margin-top:2rem;
+    padding:4rem;
+    & h1{
+        @media screen and (max-width:816px){
+            text-align: center;
+            margin-bottom:2rem;
+        }
+    }
+        & form{
+            @include Flex;
+            flex-direction: column;
+            & .form_image_wrapper{
+                @include Flex(stretch, flex-end);
+                @media screen and (max-width:816px){
+                    flex-direction: column-reverse;
+                }
+                
+                & .left{
+                    flex:0 1 60%; 
+                    @media screen and (max-width:816px){
+                        flex:1;
+                        width:100%;
+                       
+                        margin-top:1rem;
+                    }
+                    & .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
+                        height:3rem;
+                        @include Flex(center, center);
+                    }               
+                }
+                & .right{
+                    flex:0 1 40%;
+                      @media screen and (max-width:816px){
+                        flex:1;
+                        width:100%;
+
+                    }
+                    & .profile{
+                        @include Flex(stretch, center);
+                        flex-direction: column;
+                        & .image{
+                            width:10rem;
+                            height: 10rem;
+                            overflow: hidden;
+                            border-radius: 50%;
+                            & img{
+                                max-width: 100%;
+                            }
+                        }
+                        & .upload_icon{
+                            @include Flex(stretch, center);
+                            & .button{
+                                padding:.5rem 1.5rem;
+                                background:blue;
+                                margin:1rem;
+                                color:#fff;
+            
+                                @include Flex(center, center);
+                                & span{
+                                    margin-left:1rem;
+                                }
+                            }
+            
+                        }
+                        & p{
+                            font-size: 1.1rem;
+                            text-align: center;
+                            max-width:30rem;
+                            width:100%;
+                        }
+                    }
+                }
+            }
+& .css-sghohy-MuiButtonBase-root-MuiButton-root{
+padding:1rem 4rem;
+}
+           
+        }
+       
+
+
+}

@@ -1,0 +1,111 @@
+.listings{
+    padding-bottom:2rem;
+    & .addproperty{
+        margin-bottom:1rem;
+        @include Flex(flex-end, center);
+        & button{
+            padding:1rem 1.5rem;
+            background:blue;
+            color:#fff;
+            border:1px solid blue;
+            font-weight: 600;
+            font-size:1.4rem;
+            cursor: pointer;
+            @include Flex(center, center);
+            & span{
+                margin-left:1.5rem;
+            }
+        }
+    }
+    & .gallery{
+        align-self: stretch;
+        @include Flex(center, stretch);
+        & ul{
+            max-width: 120rem;
+            width:100%;
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+            gap:2rem;
+            & li{
+                width:100%;
+                & .image{
+                    width:100%;
+                    height:16.5rem;
+                    overflow: hidden;
+                    position:relative;
+                    & .edit_delete{
+                        display:flex;
+                        position:absolute;
+                        top:1rem;
+                        padding:0rem 2rem;
+                        justify-content: space-between;
+                        width:100%;
+                    }
+                    & .edit_icon{
+                        width:4rem;
+                        height:4rem;
+                        background: orangered;
+                        cursor: pointer;
+                        @include Flex(center, center);
+                        & span{
+                            width:60%;
+                            display: inline-block;
+                            height:60%;
+                            border:2px solid #fff;
+                            position:relative;
+                            border-radius: .3rem;
+                          & .edit{
+                            position:absolute;
+                            top:-.5rem;
+                            right:-1rem;
+                            font-size: 2rem;
+                            color:#fff;
+                          }
+                        }
+                    }
+                    & .delete_icon{
+                        width:4rem;
+                        height:4rem;
+                        background: #fff;
+                        border-radius: .5rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        & .delete{
+                            font-size: 2rem;
+                            color:red;
+                        }
+                    }
+                    & img{
+                        width:100%;
+                        height:100%;
+                        object-fit: cover;
+                        transform: scale(1);
+                        transition: transform 2s;
+                    }
+                    &:hover img{
+                        transform: scale(1.2);
+                    }
+                }
+                & .description{
+                    padding:3rem;
+                    border:1px solid #f2f2f2;
+                    & .name{
+                        font-family: Prata;
+                        font-weight: 400;
+                        text-transform: capitalize;
+                        color:#222222;
+                        font-size:1.2rem;
+                        margin-bottom:1rem;
+                    }
+                    & .price{
+                        font-size: 1rem;
+                        color:grey;
+                        font-weight: 300;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,91 @@
+.footer{
+    background:rgba(57, 57, 57, 0.05);
+    max-width:140rem;
+    width:100%;
+    margin:0 auto;
+    margin-top:4rem;
+    padding:4rem;
+    & ul{
+        display:grid;
+        grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+        gap:4rem;
+        & > li{
+            &:first-child{
+                & .logo{
+                    
+                    & > .logo_name{
+                        @include Flex(stretch, center);
+                        & img{
+                            max-width:6rem;
+                        }
+                        & p{
+                            font-size: 1.5rem;
+                            font-weight: 600;
+                            & span{
+                                color:red;
+                            }
+                        }
+
+                    }
+                }
+                & p{
+                    font-weight: 300;
+                    font-size: 1.3rem;
+                    margin-top: 1rem;
+                    // line-height: 2.5rem;
+                }
+            }
+            &:nth-child(2){
+                & h1{
+                    font-size: 1.8rem;
+                    margin-bottom: 1rem;
+                }
+                & .location,
+                & .telephone,
+                & .email{
+                    @include Flex(stretch, center);
+                    & span{
+                        display: inline-block;
+                        font-size: 1.4rem;
+                        margin-left:.5rem
+                    }
+                }
+                & .telephone{
+                    margin:1rem 0;
+                }
+            }
+            &:nth-child(3){
+                & h1{
+                    font-size: 1.8rem;
+                    margin-bottom: 1rem;
+                }
+                & ol{
+                    & > li{
+                        font-size: 1.4rem;
+                        &:not(:last-child){
+                            margin-bottom: 1rem;
+                        }
+                    }
+                }
+            }
+            &:last-child{
+               
+                & .social{
+                    border-bottom: 1px solid #e6afaf;
+                    margin-bottom: 1rem;
+                    & .icon{
+                        font-size: 2.5rem;
+                        &.two{
+                            margin: 0 .5rem
+                        }
+                    }
+
+                }
+                & p{
+                    font-size: 1.4rem;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+}

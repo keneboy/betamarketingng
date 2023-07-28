@@ -1,0 +1,167 @@
+.consultants{
+    & .title{
+       font-size: 2rem;
+       margin-bottom: 2rem; 
+
+    }
+    & .input_search{
+        @include Flex(stretch, center);
+        height:4.5rem;
+        max-width:40rem;
+        width:100%;
+        border-radius: 1rem;
+        padding:0 1rem;
+        margin-bottom: 2rem;;
+        border:1px solid rgb(203, 245, 243);
+        & input{
+            flex:1;
+            border: none;
+            background: transparent;
+            margin-left:1rem;
+            outline: none;
+            font-size: 1.4rem;
+            color:grey;
+        }
+        & .search{
+            font-size:2rem;
+            color:grey;
+        }
+        
+    }
+    & .consultant_table{
+        & .css-1e2bxag-MuiDataGrid-root{
+            border:none;
+            & .MuiDataGrid-row {
+                margin-bottom:1rem;
+                border:none;
+                font-size: 1.4rem;
+                background:#f2f2f2;
+                &:first-child{
+                    margin-top:1rem;
+                }
+            }
+        }
+        & .css-f3jnds-MuiDataGrid-columnHeaders{
+            border:none;
+            background: rgb(203, 245, 243);
+            font-size:1.4rem;
+            font-weight: 600;
+        }
+       
+    }
+}
+
+.consultant_action{
+    width:3rem;
+    height:3rem;
+    @include Flex(center, center);
+    background: transparent;
+    transition: all .5s;
+    border-radius: 50%;
+    cursor: pointer;
+    &:hover{
+        background:grey;
+    };
+}
+.commision{
+    padding:.5rem 1.2rem;
+    border:none;
+    background:red;
+    color:#fff;
+}
+
+// invite success
+.success_invite{
+    width:100%;
+    height:100vh;
+    @include Flex(center, center);
+    background:rgb(243,244,245);
+    & .card{
+        max-width:60rem;
+        width:100%;
+        min-height:30rem;
+        @include Flex(center, center);
+        flex-direction: column;
+        background:#fff;
+        padding:2rem;
+        & .image{
+            width:10rem;
+            height:10rem;
+            position: relative;
+            & img{
+                max-width:10rem;
+            }
+            & span{
+                position: absolute;
+                display: inline-block;
+                width:4rem;
+                height: 4rem;
+                border:4px solid greenyellow;
+                border-radius: 50%;
+                right:-1rem;
+                bottom:0rem;
+                background: #fff;
+                color:yellowgreen;
+                font-weight: 600;
+                @include Flex(center, center);
+            }
+
+        }
+        & h1{
+            font-weight: 300;
+        }
+        & p{
+            font-size: 1.4rem;
+        }
+        & p.resend{
+            font-size:1.4rem;
+            margin-top:4rem;
+            & span{
+                color:red;
+                cursor: pointer;
+                display:inline-block;
+                text-decoration: underline;
+                transition:transform .2s;
+               &:hover{
+                transform:scale(1.02) translateY(-.1rem);
+               }
+               &:active{
+                transform:scale(1) translateY(0);
+               }
+            }
+        }
+
+
+    }
+}
+
+// modal
+
+    .header_x{
+        border-bottom:2px solid #75757533;
+        @include Flex(space-between, center);
+        & .close{
+            font-size:2.5rem;
+        }
+    }
+    .bottom_x{
+        margin-top:1rem;
+        & form{
+            & .input_label{
+                @include Flex();
+                flex-direction: column;
+                & input
+                {
+                    height:4rem;
+                    width:100%;
+                    padding:1rem;
+                }
+            }
+            & button{
+                height:4rem;
+                width:100%;
+                display: inline-block;
+                margin-top:1rem;
+            }
+        }
+    }

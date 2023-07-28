@@ -1,0 +1,61 @@
+.toggle{
+    width:7rem;
+    height:7rem;
+    border-radius: 1rem;
+    position:relative;
+    @include Flex(center, center);
+    display: none;
+    cursor: pointer;
+    overflow: hidden;
+    @media screen and (max-width:881px){
+        display: flex;
+    }
+    & span{
+        position:absolute;
+        display: inline-block;
+        width:5rem;
+        height:.5rem;
+        background-color: red;
+        border-radius: .4rem;
+        &:nth-child(2){
+            transform: translateY(-1.2rem);
+            width:3.7rem;
+            left:1rem;
+            transition:all .5s;
+            background-color: red;
+           
+        }
+        &:nth-child(3){
+            transform: translateY(1.2rem);
+            width:3rem;
+            left:1rem;
+            transition:all .5s;
+           
+        }
+        &:nth-child(1){
+            transition:all .5s;
+        }
+      
+    }
+    &.active{
+      &  span{
+          &:nth-child(1){
+            transform: translateX(9rem);
+         }
+         &:nth-child(2){
+            width:5rem;
+            transform:translateY(0rem) rotate(45deg);
+            transition-delay: .125s;
+        
+        }
+        &:nth-child(3){
+            width:5rem;
+            transform:translateY(0rem) rotate(315deg);
+            transition-delay: .25s;
+        }
+      }
+    }
+
+}
+
+

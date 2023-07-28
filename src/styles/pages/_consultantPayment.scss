@@ -1,0 +1,57 @@
+.consultantPayment{
+    padding-bottom: 4rem;
+    & .form_wrapper{
+        margin-top:4rem;
+        & form{
+      
+            max-width:60rem;
+            width:100%;
+            margin:0 auto;
+            background:#fff;
+            padding:2rem 4rem;
+            & .input_label{
+                @include Flex();
+                flex-direction: column;
+                margin-bottom:2rem;
+                & label{
+                    margin-bottom:1rem;
+                    font-size:1.4rem;
+                    color:grey;
+                }
+                & .input_error{
+                    @include Flex;
+                    width:100%;
+                    flex-direction: column;
+                }
+                & input{
+                    width:100%;
+                    height:4rem;
+                    padding:1rem;
+                }
+
+            }
+            & button{
+                display: inline-block;
+                @include Flex(center, center);
+                width:100%;
+                height:5rem;
+                background:orange;
+                border:none;
+                & span{
+                    color:#fff;
+                    font-size: 1.4rem;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+  
+}
+.success_alert{
+    padding:1.2rem;
+    background:#cefad0;
+    color:rgb(34,197,94);
+    margin-bottom:2rem;
+    text-align: center;
+    @include Flex(center, center);
+}

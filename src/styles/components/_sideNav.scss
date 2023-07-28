@@ -1,0 +1,66 @@
+.sidenav{
+        position:fixed;
+        width:100%;
+        top:0;
+        left:0;
+        bottom:0;
+        height:100%;
+        z-index: 1000;
+        background: rgba(255,255,255,0.5);
+        backdrop-filter: blur(1rem);
+        display:none;
+        flex-direction: column;
+        @media screen and (max-width:881px){
+            @include Flex(center, center);
+        }
+& nav{
+
+    & .close{
+            width:4rem;
+            height:4rem;
+            cursor: pointer;
+            @include Flex(center, center);
+            border:1px solid #222;
+            border-radius: 50%;
+            position:absolute;
+            top:2rem;
+            right:2rem;
+            & .close_icon{
+                font-size: 2rem;
+            }
+        
+    }
+    & ul{
+        white-space: nowrap;
+        @include Flex(stretch, center);
+        flex-direction: column;        
+        & li{
+            color:#000;
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            padding: .25rem;
+            font-size: 1.8rem;
+            line-height: 150%;
+            transition: color .35s;
+            transition-delay: 0s;
+            font-weight: 900;
+            transition-timing-function: ease;
+            &:not(:last-child){
+                margin-bottom: 2rem;
+            }
+            &:hover{
+                color:red;
+            }
+
+        }
+        &.uniq{
+            & li{
+                color:var(--str);
+            }
+        }
+
+    }
+}
+}
+

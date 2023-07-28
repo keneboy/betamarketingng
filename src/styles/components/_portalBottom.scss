@@ -1,0 +1,148 @@
+.setting{
+& .bottom{
+    background: #fff;
+    margin:2rem;
+    padding:2rem;
+    & .title{
+border-bottom: 1px solid #ccc;
+font-size: 2rem;
+font-weight: 600;
+padding-bottom:.5rem;
+    }
+    & .form{
+        &.reform{
+            margin-top:2rem;
+        }
+        & form{
+            
+            & p{
+                color:rgba(255, 68, 0, 0.445);
+                font-size: 1.3rem;
+                font-weight: 600;
+                margin:2rem 0;
+            }
+            & .form_wrapper{
+                max-width: 62rem;
+                width:100%;
+                margin:0 auto;
+                @include Flex(stretch, flex-end);
+                flex-direction: column;
+                @media screen and (max-width:973px){
+                    max-width: 100%;
+                    width:100%;
+                    margin:0 ;
+                    @include Flex(stretch, stretch);
+                }
+                & > p.errorMessage{
+                    color:red;
+                    background:rgba(243, 80, 80, 0.548);
+                    max-width:40rem;
+                    width:100%;
+                    padding:1rem 3.5rem;
+                    text-align: center;
+                    align-self: end;
+                    font-weight:300;
+                    @include Flex(center, center);
+                    margin-bottom:2rem;
+
+                }
+                & > *:not(:last-child){
+                    margin-bottom: 1rem;
+                }
+                & .input_label,
+                & .radio_gender{
+                    @include Flex(stretch, center);
+                    @media screen and (max-width:973px){
+                        flex-direction:column;
+                        @include Flex(stretch, stretch);
+                    }
+                    & label{
+                        margin-right:2rem;
+                    }
+                }
+                & .radio_gender{
+                    & .radio_field{
+                        width:40rem;
+                        @include Flex(stretch, center); 
+                        @media screen and (max-width:973px){
+                            width:100%;
+                            @include Flex(stretch, stretch);
+                           
+                        }
+                        & .field{
+                            &:not(:last-child){
+                                margin-right:1rem;
+                            }
+                            & span{
+                                margin-left:.5rem;
+                            }
+                        }
+                    }
+                }
+                & .input_error{
+                    @include Flex;
+                    flex-direction: column;
+                    width:40rem;
+                    @media screen and (max-width:973px){
+                        width:100%;
+                    }
+                    & input{
+                        height:4rem;
+                        width:100%;
+                        padding:1rem;
+                        &:focus{
+                            border:1px solid rgba(255, 68, 0, 0.445);
+                            outline: none;
+                        }
+                    }
+                    & textarea{
+                        width:40rem; 
+                        padding:2rem; 
+                        @media screen and (max-width:973px){
+                            width:100%;
+                        }
+                    }
+
+                }
+                
+            }
+            & .line{
+                width:100%;
+                height:.1rem;
+               background:  #ccc;
+               margin-top:2rem;
+            }
+            & .button_wrapper{
+             
+                padding-top:1rem;
+                max-width: 63rem;
+                width:100%;
+                margin:0 auto;
+                @include Flex(flex-end, center);
+                & .btn_container{
+                    width:40rem;
+                    @include Flex;
+                    & button,
+                    & .cancel{
+                        padding:.5rem 1.5rem;
+                        display: inline-block;
+                        border:1px solid rgba(255, 68, 0, 0.445);
+                        background: rgba(255, 68, 0, 0.445);
+                        cursor: pointer;
+                        &:first-child{
+                            border:none;
+                            background: transparent;
+                            margin-right:1rem;
+                            color:rgba(255, 68, 0, 0.89);
+                            font-weight: 900;
+                        }
+                        
+                    }
+                           
+                }
+                
+            }
+        }
+    }
+}
+}

@@ -1,0 +1,152 @@
+.featuredProperties{
+    background-color: #f1ebeb65;
+   @include Flex(stretch, center);
+   flex-direction: column;
+   padding-top:8rem;
+   @media screen and (max-width:1287px){
+       padding: 0 4rem;
+       padding-top:8rem;
+   }
+   width:100%;
+       & h1{
+           color: #000000;
+           font-family: "Prata", Sans-serif;
+           font-weight: 300;
+           line-height: 1.5em;
+           font-size: 2.9rem;
+           margin-bottom: 2rem;
+           text-align: center;
+       }
+
+       & > p{
+           color: #000000;
+           font-family: "Lato", Sans-serif;
+           font-size: 1.7rem;
+           font-weight: 300;
+           letter-spacing: 0.6px;
+           margin-bottom: 6rem;
+           text-align: center;
+       }
+       & .gallery{
+           align-self: stretch;
+        //    @include Flex(center, stretch);
+           & ul{
+               max-width: 120rem;
+               width:100%;
+                margin:0 auto;               
+               & li{
+                   width:100%;
+                
+                //    margin-right:1rem!important;
+  
+                   & .image{
+                       width:100%;
+                       height:26.5rem;
+                       overflow: hidden;
+                       backface-visibility: hidden;
+                       position:relative;
+                       &::after{
+                           content:"";
+                           position:absolute;
+                           top:0;
+                           left:0;
+                           width:100%;
+                           height:100%;
+                           background: linear-gradient(to bottom, transparent,transparent,rgba(0,0,0,0.5) );
+   
+                       }
+                       & img{
+                           width:100%;
+                           height:100%;
+                           object-fit: cover;
+                           transform: scale(1);
+                           transition: all 2s linear;
+                       }
+                       & .attachment{
+                           position:absolute;
+                           bottom:2rem;
+                           left:2rem;
+                           z-index:4;
+                           color:#fff;
+                       }
+                       &:hover img{
+                           transform: scale(1.5);
+                       }
+                   }
+                   & .description{
+                       padding:3rem;
+                       border:1px solid #f2f2f2;
+                       @media screen and (max-width:1108px){
+                        padding:3rem 0rem;
+                       }
+                       & > .top_desc{
+                        padding-bottom:1rem;
+                        &.top_border{
+                            border-bottom:1px solid rgb(197, 189, 189);
+                        }
+                       
+                        & ul{
+                            @include Flex;
+                            & li{
+                                font-size:1.2rem;
+                                @media screen and (max-width:1136px){
+                                 @include Flex(stretch, center);
+                                 flex-direction:column;
+                                 border:1px solid #f2f2f5;
+                                 &:not(:last-child){
+                                     margin-right:.5rem;
+                                 }
+                                }
+                                @media screen and (max-width:926px){
+                                    font-size:1rem;
+                                }
+
+                            }
+                        }   
+                    }
+   & .bottom_desc{
+       @include Flex;
+       flex-direction: column;
+       padding-top:1rem;
+       & span{
+           font-size: 1.4rem;
+           @media screen and (max-width:926px){
+            font-size:1.2rem;
+        }
+       }
+       
+   
+   
+   }
+                   }
+               }
+   
+               &.row{
+                   grid-template-columns: repeat(1, 1fr);
+                   & li{
+                       height:20rem;
+                       border:1px solid #f2f2f2;
+
+                       & .link{
+                           height:100%;
+                           & .image{
+                               width:30rem;
+                               height:100%;
+                               & img{
+                                   width:100%;
+                                   height:100%;
+                                   object-fit:cover;
+   
+                               }
+                           }
+                           @include Flex;
+                           & .description{
+                               border:1px solid transparent;          
+                           }
+                       }
+                   }
+               }
+           }
+          
+       }
+   }

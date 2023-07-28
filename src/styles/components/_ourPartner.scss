@@ -1,0 +1,32 @@
+section.our_partner{
+    padding:4rem 0;
+    & h6{
+        text-align: center;
+        margin-bottom:2rem;
+        font-size: 3rem;
+    }
+    & .slider{
+        overflow: hidden;
+        height:10rem;
+        width:auto ;  
+        position: relative; 
+        & .slide-track{
+             display:flex;
+             animation:scroll 40s linear infinite;
+             width:calc(25rem * 14);
+             height:100%;
+            & .slide{
+                height:10rem;
+                width:25rem;
+            }
+        }
+    }
+}
+@keyframes scroll {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(calc(-25rem * 7)); 
+    }
+}

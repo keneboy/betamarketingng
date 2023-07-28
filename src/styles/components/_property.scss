@@ -1,0 +1,213 @@
+.property{
+    margin-top:4rem;
+    & .image{
+        width:100%;
+        height:90vh;
+        position:relative;
+       
+        & img{
+            width:100%;
+            height:90vh;
+            object-fit: cover;
+        }
+        &::after{
+            position:absolute;
+            content:"";
+            bottom:0;
+            left:0;
+            height:100%;
+            width:100%;
+            background:linear-gradient(to bottom, transparent, transparent, transparent, rgba(0,0,0,.5),  rgba(0,0,0,.7) );
+   
+        }
+        & .desc{
+            position:absolute;
+            bottom:4rem;
+            width:100%;
+            padding:4rem;
+            z-index:1;
+            @include Flex(space-between, center);
+            & .left{
+                & .name{
+                    font-family: Prata;
+                    font-weight: 400;
+                    text-transform: capitalize;
+                    font-size: 3rem;
+                    line-height: 1.2;
+                    color:#fff;
+                    margin-bottom:1rem
+                }
+                & .location{
+                    @include Flex(stretch, center);
+                    & .icon{
+                        color:#fff;
+                        font-size: 2rem;
+                        margin-right:1rem;
+                    }
+                    & span{
+                        font-size: 15px;
+                        margin-bottom: 0;
+                        margin-top: 7px;
+                        display:inline-block;
+                        color:#fff;
+                    }
+
+                }
+
+            }
+            & .right{
+                @include Flex(stretch, flex-end);
+                flex-direction: column;
+
+                & .price{
+                    font-size: 3rem;
+                    margin-bottom: 15px;
+                    color:#fff;
+                    font-weight: 600;
+                }
+                & .size{
+                    font-size: 18px;
+                    font-weight: 300;
+                    color:#fff;
+                }
+            }
+        }
+    }
+    & .description{
+        @include Flex(stretch, center);
+        flex-direction: column;
+        margin-top: 8rem;
+        & h1{
+            font-size: 3rem;
+            font-weight: 300;
+            color:#222222;
+            margin-bottom:8rem;
+        }
+        & p{
+            max-width:100rem;
+            width:100%;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 300;
+            line-height: 2.5rem;
+            &:not(:last-child){
+                margin-bottom:4rem;
+            }
+        }
+    }
+    & .tour{
+        @include Flex(stretch, center);
+        flex-direction: column;
+        background-color: #f2f2f2;
+        margin-top: 4rem;
+
+        padding:0 30rem;
+        padding-top:8rem;
+        padding-bottom:8rem;
+        @media screen and (max-width:1186px){
+            padding:4rem 10rem;
+        }
+        @media screen and (max-width:592px){
+            padding:4rem;
+        }
+        & > h1{
+            font-family: Prata;
+            font-weight: 400;
+            text-transform: capitalize;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom:10rem;
+        }
+        & form{
+            align-self: stretch;
+            & .top{
+                @include Flex;
+                & .input_field_wrapper{
+                    @include Flex;
+                    flex-direction: column;
+                    flex:1;
+                    & input{
+                        width:100%;
+                        height:4rem;
+                        padding:1rem;
+                    }
+                    &:not(:last-child){
+                        margin-right: 2rem;
+                        @media screen and (max-width:592px){
+                            margin-right: 1rem;
+                        }
+                    }
+                }
+            }
+            & .bottom{
+                @include Flex;
+                & .input_field_wrapper{
+                    @include Flex;
+                    flex-direction: column;
+                    flex:1;
+                    & input{
+                        width:100%;
+                        height:4rem;
+                        padding:1rem;
+                    }
+                    &:not(:last-child){
+                        margin-right: 2rem;
+                        @media screen and (max-width:592px){
+                            margin-right: 1rem;
+                        }
+                    }
+                }
+            }
+           
+            & h1{
+                font-family: Prata;
+                font-weight: 400;
+                text-transform: capitalize;
+                font-size: 1.8rem;
+                margin: 3rem 0;
+
+            }
+            & .input_text_message{
+                @include Flex;
+                margin-top:2rem;
+                flex-direction: column;
+                & label{
+                font-size: 1.6rem;
+                font-weight: 600;
+                }
+            }
+            & .terms_privacy{
+                @include Flex;
+                margin-top: 2rem;
+                & input{
+                    margin-right: 1rem;
+                    & span{
+                        font-size: 1.4rem;
+                        color:#333
+                    }
+                }
+            }
+            & button{
+                background:red;
+                padding:1rem 1.5rem;
+                margin-top:2rem;
+                border:1px solid red;
+                @include Flex(center, center);
+                & span{
+                   color:#fff;
+                   font-size: 1.5rem;
+                }
+            }
+        }
+    }
+    & .video{
+        width:100%;
+        height:60rem;
+        margin:8rem 0;
+        & iframe{
+            width:100%;
+            height:100%;
+        }
+    }
+    
+}
